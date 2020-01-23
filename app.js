@@ -21,4 +21,3 @@ var athleticHotel = new Hotel('Athletic', 115, 40, true, true, true, false, fals
 var rangerHotel = new Hotel('Ranger', 90, 30, false, false, false, true, false);
 
 
-var
