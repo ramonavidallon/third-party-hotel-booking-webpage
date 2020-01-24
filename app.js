@@ -24,7 +24,7 @@ function Hotel(name, city, description, roomsTotal, roomsBooked, roomService, gy
   };
 }
 
-// hotel created
+// new hotel created
 var marinerHotel = new Hotel(
   'Mariners',
   'Seattle, WA',
@@ -47,16 +47,42 @@ var marinerHotel = new Hotel(
   var elMarinerDescription = document.getElementById('hotelDescription1');
   elMarinerDescription.textContent = marinerDescription;
 
-
   // populates if hotel is fully booked or available to book
   var marinerAvailability = marinerHotel.checkAvailability();
   var elMarinerAvailability = document.getElementById('roomAvailability');
   elMarinerAvailability = marinerAvailability;
 
+  // populates room service availability
+  var marinerRoomService = 'Room Service: ' + marinerHotel.roomService;
+  var elMarinerRoomService = document.getElementById('roomService1');
+  elMarinerRoomService.textContent = marinerRoomService;
+
+  // populates gym availability
+  var marinerGym = 'Gym: ' + marinerHotel.gym;
+  var elMarinerGym = document.getElementById('gym1');
+  elMarinerGym.textContent = marinerGym;
+
+  // populates valet availability
+  var marinerValet = 'Valet: ' + marinerHotel.valet;
+  var elMarinerValet = document.getElementById('valet1');
+  elMarinerValet.textContent = marinerValet;
+
+  // populates wifi availability
+  var marinerWifi = 'Wifi: ' + marinerHotel.wifi;
+  var elMarinerWifi = document.getElementById('wifi1');
+  elMarinerWifi.textContent = marinerWifi;
+
+  // populates pool availability
+  var marinerPool = 'Pool: ' + marinerHotel.pool;
+  var elMarinerPool = document.getElementById('pool1');
+  elMarinerPool.textContent = marinerPool;
 
 
 
 
+
+
+// new hotel created
 var astroHotel = new Hotel(
   'Astros',
   'Houston, TX',
@@ -74,6 +100,8 @@ var astroHotel = new Hotel(
   var elAstro = document.getElementById('hotel2');
   elAstro.textContent = astroCity;
 
+
+// new hotel created
 var athleticHotel = new Hotel(
   'Athletics',
   'Oakland, CA',
@@ -86,6 +114,8 @@ var athleticHotel = new Hotel(
   false, 
   false);
 
+
+// new hotel created
 var rangerHotel = new Hotel(
   'Rangers',
   'Arlington, TX',
@@ -104,7 +134,7 @@ var rangerHotel = new Hotel(
   // Get the modal
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
-var btn = document.getElementById('marinerDetails', 'astroDetails', 'athleticDetais', 'rangerDetails');
+var btn = document.getElementById('marinerDetails', 'astroDetails', 'athleticDetails', 'rangerDetails');
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName('close')[0];
 
