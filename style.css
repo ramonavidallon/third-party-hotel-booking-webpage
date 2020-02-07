@@ -1,3 +1,7 @@
+body {
+  background-color: #aaa;
+}
+
 #mlbLogo {
   display: block;
   margin-left: auto;

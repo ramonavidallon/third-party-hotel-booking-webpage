@@ -13,16 +13,18 @@ function Hotel(name, city, description, roomsTotal, roomsBooked, roomService, gy
   this.checkAvailability = function() {
     if (roomsTotal > roomsBooked) {
       var marinerAvailable = 'The ' + this.name + ' have rooms available';
-      var vacancy = document.getElementById('roomAvailability');
+      var vacancy = document.querySelectorAll('#roomAvailability1', '#roomAvailability2', '#roomAvailability3', '#roomAvailability4');
       vacancy.textContent = marinerAvailable;
     }
     if (roomsTotal <= roomsBooked) {
       var marinerUnavailable = 'The ' + this.name + ' do not have any rooms available';
-      var noVacancy = document.getElementById('roomAvailability');
+      var noVacancy = document.querySelectorAll('#roomAvailability1', '#roomAvailability2', '#roomAvailability3', '#roomAvailability4');
       noVacancy.textContent = marinerUnavailable;
     }
   };
 }
+
+var hotels = [marinerHotel, astroHotel, athleticHotel, rangerHotel];
 
 // new hotel created
 var marinerHotel = new Hotel(
@@ -49,7 +51,7 @@ var marinerHotel = new Hotel(
 
   // populates if hotel is fully booked or available to book
   var marinerAvailability = marinerHotel.checkAvailability();
-  var elMarinerAvailability = document.getElementById('roomAvailability');
+  var elMarinerAvailability = document.getElementById('roomAvailability1');
   elMarinerAvailability = marinerAvailability;
 
   // populates room service availability
@@ -81,7 +83,6 @@ var marinerHotel = new Hotel(
 
 
 
-
 // new hotel created
 var astroHotel = new Hotel(
   'Astros',
@@ -99,6 +100,42 @@ var astroHotel = new Hotel(
   var astroCity = "City: " + astroHotel.city;
   var elAstro = document.getElementById('hotel2');
   elAstro.textContent = astroCity;
+
+  // populate description of hotel
+  var astroDescription = astroHotel.description;
+  var elAstroDescription = document.getElementById('hotelDescription2');
+  elAstroDescription.textContent = astroDescription;
+
+  // populates if hotel is fully booked or available to book
+  var astroAvailability = astroHotel.checkAvailability();
+  var elAstroAvailability = document.getElementById('roomAvailability2');
+  elAstroAvailability = astroAvailability;
+
+  // populates room service availability
+  var astroRoomService = 'Room Service: ' + astroHotel.roomService;
+  var elAstroRoomService = document.getElementById('roomService2');
+  elAstroRoomService.textContent = astroRoomService;
+
+  // populates gym availability
+  var astroGym = 'Gym: ' + astroHotel.gym;
+  var elAstroGym = document.getElementById('gym2');
+  elAstroGym.textContent = astroGym;
+
+  // populates valet availability
+  var astroValet = 'Valet: ' + astroHotel.valet;
+  var elAstroValet = document.getElementById('valet2');
+  elAstroValet.textContent = astroValet;
+
+  // populates wifi availability
+  var astroWifi = 'Wifi: ' + astroHotel.wifi;
+  var elAstroWifi = document.getElementById('wifi2');
+  elAstroWifi.textContent = astroWifi;
+
+  // populates pool availability
+  var astroPool = 'Pool: ' + astroHotel.pool;
+  var elAstroPool = document.getElementById('pool2');
+  elAstroPool.textContent = astroPool;
+  
 
 
 // new hotel created
@@ -132,9 +169,9 @@ var rangerHotel = new Hotel(
 ///////////////////////////////////////////////////////////
 // modal js for hotel description
   // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.querySelectorAll('#myModal');
 // Get the button that opens the modal
-var btn = document.getElementById('marinerDetails', 'astroDetails', 'athleticDetails', 'rangerDetails');
+var btn = document.querySelectorAll('#marinerDetails', '#astroDetails', '#athleticDetails', '#rangerDetails');
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName('close')[0];
 
